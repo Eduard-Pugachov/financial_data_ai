@@ -1,0 +1,39 @@
+{
+    "intents": [
+        {
+            "tag": "greeting",
+            "patterns": [
+                "Hi",
+                "Hello",
+                "Hey",
+                "Greetings",
+                "Good day",
+                "Good morning",
+                "Good afternoon",
+                "Good evening"
+            ],
+            "responses": [
+                "Hello, my name's Equity!",
+                "Hi there! I'm Equity! Ask me questions about the stock market!",
+                "Greetings from Equity! What would you like to know?"
+            ]
+        },
+        {
+            "tag": "goodbye",
+            "patterns": [
+                "Bye",
+                "Goodbye",
+                "See you later",
+                "See you soon",
+                "Have a nice day",
+                "Take care"
+            ],
+            "responses": [
+                "Thank you for using Equity, goodbye!",
+                "Have a nice day, and happy trading!",
+                "Take care! If you have stock questions, you know where to find me!"]
+            } 
+        ]
+
+    
+}
