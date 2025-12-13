@@ -1,5 +1,6 @@
 {
     "intents": [
+
         {
             "tag": "greeting",
             "patterns": [
@@ -14,7 +15,7 @@
             ],
             "responses": [
                 "Hello, my name's Equity!",
-                "Hi there! I'm Equity! Ask me questions about the stock market!",
+                "Hi there! I'm Equity! Ask me questions about the top stock companies!",
                 "Greetings from Equity! What would you like to know?"
             ]
         },
@@ -32,7 +33,121 @@
                 "Thank you for using Equity, goodbye!",
                 "Have a nice day, and happy trading!",
                 "Take care! If you have stock questions, you know where to find me!"]
-            } 
+            }, 
+            {
+                "tag": "thanks",
+                "patterns": [
+                    "Thanks",
+                    "Thank you",
+                    "Appreciate it",
+                    "Thanks a lot",
+                    "Thanks a bunch",
+                    "Thanks a ton",
+                    "Thanks so much",
+                    "Thanks a lot!"
+                ],
+                "responses": [
+                    "You're welcome!",
+                    "No problem!",
+                    "Anytime! Let me know if you have more questions about the top stocks!"
+                ]
+            },
+            {
+            "tag": "maximum",
+            "patterns": [
+                "max",
+                "top",
+                "high",
+                "highest",
+                "most"
+            ],
+            "responses": [
+                "The max stock price of this company was: ",
+                "Sure! Here is the highest stock price: ",
+                "According to recent data, the highest stock price for this company was: "]
+            }, 
+            {
+            "tag": "minimum",
+            "patterns": [
+                "min",
+                "low",
+                "small",
+                "lowest",
+                "least"
+            ],
+            "responses": [
+                "The lowest stock price of this company was: ",
+                "Sure! Here is the minimum stock price: ",
+                "According to recent data, the lowest stock price for this company was: "]
+            },
+            {
+            "tag": "average",
+            "patterns": [
+                "average",
+                "mean",
+                "median",
+                "typical"
+            ],
+            "responses": [
+                "The average stock price of this company was: ",
+                "Sure! Here is the average stock price: ",
+                "According to recent data, the average stock price for this company was: "]
+            },
+            {
+            "tag": "growth_query",
+            "patterns": [
+                "Which stock grew the most",
+                "Top growth",
+                "Best performer",
+                "Highest growth",
+                "Most profitable",
+                "Which gained the most"
+            ],
+            "responses": [
+                "Let me analyze the growth data for you.",
+                "I'll find the top performing stocks."
+            ]
+        },
+        {
+            "tag": "volume_query",
+            "patterns": [
+                "Trading volume",
+                "Volume data",
+                "How much was traded",
+                "Most traded stock"
+            ],
+            "responses": [
+                "I can show you volume information.",
+                "Let me check the trading volume data."
+            ]
+        },
+        {
+            "tag": "comparison",
+            "patterns": [
+                "Compare stocks",
+                "Compare companies",
+                "Which is better",
+                "Difference between"
+            ],
+            "responses": [
+                "I can compare stocks for you. Which companies would you like to compare?",
+                "Let me help you compare those stocks."
+            ]
+        },
+        {
+            "tag": "help",
+            "patterns": [
+                "Help",
+                "What can you do",
+                "How do you work",
+                "Commands",
+                "What are your features"
+            ],
+            "responses": [
+                "I can help you with: stock prices, growth analysis, volume data, and comparisons. Just ask!",
+                "Ask me about stock prices, growth rates, trading volumes, or to compare companies!"
+            ]
+        }
         ]
 
     
