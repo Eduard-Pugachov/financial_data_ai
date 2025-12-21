@@ -7,11 +7,7 @@ import torch
 import torch.nn as nn
 import numpy as np
 
-
-# Download required NLTK data
 nltk.download('punkt')
-
-# Text preprocessing (NLP foundation)
 def tokenize(sentence):
     return nltk.word_tokenize(sentence)
 
@@ -42,7 +38,7 @@ class EquityChatbotModel(nn.Module):
 
 
 class EquityChatbot:
-    def __init__(self, model_path='chatbot_model.pth'):
+    def __init__(self, model_path='src/chatbot_model.pth'):
         data = torch.load(model_path)
 
         self.input_size = data['input_size']
@@ -76,3 +72,14 @@ class EquityChatbot:
         
         return "I'm sorry, I am not sure I understand. Can you rephrase that?"
 
+    def predict_intent(self, user_input):
+        sentence = tokenize(user_input)
+        x = bag_of_words(sentence, self.all_words)
+        x = torch.from_numpy(np.array(x)).float().view(1, -1)
+
+        output = self.model(x)
+        probs = torch.softmax(output, dim=1)
+
+        confidence, predicted = torch.max(probs, dim=1)
+        tag = self.tags[predicted.item()]
+        return tag, confidence.item()

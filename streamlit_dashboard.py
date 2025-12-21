@@ -1,6 +1,10 @@
 import streamlit as st
 import pandas as pd
 import plotly.express as px
+import subprocess
+import time
+import streamlit.components.v1 as components
+import plotly.graph_objects as go
 from src.data_utils import (
     load_preprocess_data,
     get_companies,
@@ -12,11 +16,11 @@ from src.data_utils import (
 )
 
 st.set_page_config(
-    page_title = "Equity - Stock Analysis Dashboard",
+    page_title="Equity - Stock Analysis Dashboard",
     page_icon="📈",
-    layout="wide"
+    layout="wide",
+    initial_sidebar_state="expanded"
 )
-
 @st.cache_data
 def load_data():
     return load_preprocess_data('stocks.csv')
@@ -48,13 +52,13 @@ st.markdown("---")
 col_left, col_right = st.columns([2,1])
 
 with col_left:
-    st.header("📊 Stock Price Trends")
+    st.header("Stock Price Trends")
 
     companies = get_companies(df)
     selected_companies = st.multiselect(
         "Select Companies to display",
         options=companies,
-        default=companies[:5] if len(companies) >= 5 else companies["3"]
+        default=companies[:5] if len(companies) >= 5 else companies[:1]
     )
 
     if selected_companies:
@@ -82,10 +86,10 @@ with col_left:
         )
         st.plotly_chart(fig_volume, use_container_width=True)
     else:
-        st.info("👆 Select at least one company to see the charts")
+        st.info("Select at least one company to see the charts")
 
 with col_right:
-    st.header("🏢 Company Statistics")
+    st.header("Company Statistics")
 
     selected_company = st.selectbox(
         "Select a company for detailed stats:",
@@ -114,7 +118,7 @@ with col_right:
 
 st.markdown("---")
 
-st.header("🔍 Company Comparison")
+st.header("Company Comparison")
 
 compare_companies = st.multiselect(
     "Select companies to compare side-by-side:",
@@ -160,7 +164,34 @@ if compare_companies:
     )
     st.plotly_chart(fig_comparison, use_container_width=True)
 else:
-    st.info("👆 Select companies to see comparison")
+    st.info("Select companies to see comparison")
+
+
+
+# Chatbot integration
+@st.cache_resource
+def start_gradio():
+    proc = subprocess.Popen(
+        ["python", "gradio_chat.py"])
+    time.sleep(3)
+    return proc
+
+chatbot_process = start_gradio()
+
+gradio_url = "http://127.0.0.1:7860"
+iframe_html = f"""
+<div style="width: 100%; height: 650px; border-radius: 12px; overflow: hidden;">
+    <iframe 
+        src="{gradio_url}" 
+        width="100%" 
+        height="650px" 
+        frameborder="0"
+        style="border: 1px solid #2a5a2a;">
+    </iframe>
+</div>
+"""
+
+components.html(iframe_html, height=670)
 
 st.markdown("---")
-st.caption("Equity Dashboard - Built with Streamlit & Plotly")
+st.caption("Equity Dashboard - Built with Streamlit, Plotly, and Gradio")
