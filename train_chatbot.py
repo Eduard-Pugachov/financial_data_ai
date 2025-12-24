@@ -25,6 +25,7 @@ for intent in intents['intents']:
         w = tokenize(pattern)
         all_words.extend(w)
         xy.append((w, tag))
+        
 
 ignore_words = ['?', '!', '.', ',']
 all_words = [stem(w) for w in all_words if w not in ignore_words]
@@ -37,8 +38,6 @@ print(f"Unique tags: {len(tags)}")
 print(f"Tags: {tags}")
 print(f"Total patterns: {len(xy)}")
 print(f"Patterns and tags: {xy}")
-
-
 
 X_train = []
 y_train = []

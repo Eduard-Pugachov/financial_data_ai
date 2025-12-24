@@ -1,6 +1,6 @@
 import gradio as gr
 from src.equity_service import basic_single_response
-def chat_fn(message, history):
+def chat_fn(message):
     reply = basic_single_response(message)
     return reply
 
