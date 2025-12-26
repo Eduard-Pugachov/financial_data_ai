@@ -180,13 +180,18 @@ chatbot_process = start_gradio()
 
 gradio_url = "http://127.0.0.1:7860"
 iframe_html = f"""
-<div style="width: 100%; height: 650px; border-radius: 12px; overflow: hidden;">
+<style>
+    .gradio-container {{
+        border: none !important;
+    }}
+</style>
+<div style="width: 100%; height: 650px; border-radius: 12px; overflow: hidden; border: none;">
     <iframe 
         src="{gradio_url}" 
         width="100%" 
         height="650px" 
         frameborder="0"
-        style="border: 1px solid #2a5a2a;">
+        style="border: none; border-radius: 12px;">
     </iframe>
 </div>
 """
