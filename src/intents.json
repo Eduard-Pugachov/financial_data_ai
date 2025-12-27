@@ -1,6 +1,5 @@
 {
     "intents": [
-
         {
             "tag": "greeting",
             "patterns": [
@@ -11,7 +10,14 @@
                 "Good day",
                 "Good morning",
                 "Good afternoon",
-                "Good evening"
+                "Good evening",
+                "What's up",
+                "Howdy",
+                "Yo",
+                "Hey there",
+                "Hi there",
+                "Hello there",
+                "Sup"
             ],
             "responses": [
                 "Hello, my name's Equity!",
@@ -27,73 +33,132 @@
                 "See you later",
                 "See you soon",
                 "Have a nice day",
-                "Take care"
+                "Take care",
+                "Later",
+                "Catch you later",
+                "Gotta go",
+                "I'm out",
+                "Peace",
+                "See ya",
+                "Talk to you later",
+                "Until next time"
             ],
             "responses": [
                 "Thank you for using Equity, goodbye!",
                 "Have a nice day, and happy trading!",
-                "Take care! If you have stock questions, you know where to find me!"]
-            }, 
-            {
-                "tag": "thanks",
-                "patterns": [
-                    "Thanks",
-                    "Thank you",
-                    "Appreciate it",
-                    "Thanks a lot",
-                    "Thanks a bunch",
-                    "Thanks a ton",
-                    "Thanks so much",
-                    "Thanks a lot!"
-                ],
-                "responses": [
-                    "You're welcome!",
-                    "No problem!",
-                    "Anytime! Let me know if you have more questions about the top stocks!"
-                ]
-            },
-            {
+                "Take care! If you have stock questions, you know where to find me!"
+            ]
+        }, 
+        {
+            "tag": "thanks",
+            "patterns": [
+                "Thanks",
+                "Thank you",
+                "Appreciate it",
+                "Thanks a lot",
+                "Thanks a bunch",
+                "Thanks a ton",
+                "Thanks so much",
+                "Thanks a lot!",
+                "Thx",
+                "Ty",
+                "Thank you so much",
+                "I appreciate it",
+                "Much appreciated",
+                "Cheers",
+                "Thanks for the help"
+            ],
+            "responses": [
+                "You're welcome!",
+                "No problem!",
+                "Anytime! Let me know if you have more questions about the top stocks!"
+            ]
+        },
+        {
             "tag": "maximum",
             "patterns": [
                 "max",
                 "top",
                 "high",
                 "highest",
-                "most"
+                "most",
+                "maximum",
+                "peak",
+                "all time high",
+                "record high",
+                "highest price",
+                "max price",
+                "top price",
+                "peak price",
+                "what's the highest",
+                "what was the highest",
+                "show me the max",
+                "highest value",
+                "maximum value",
+                "biggest price"
             ],
             "responses": [
                 "The max stock price of this company was: ",
                 "Sure! Here is the highest stock price: ",
-                "According to recent data, the highest stock price for this company was: "]
-            }, 
-            {
+                "According to recent data, the highest stock price for this company was: "
+            ]
+        }, 
+        {
             "tag": "minimum",
             "patterns": [
                 "min",
                 "low",
                 "small",
                 "lowest",
-                "least"
+                "least",
+                "minimum",
+                "bottom",
+                "floor",
+                "lowest price",
+                "min price",
+                "minimum price",
+                "bottom price",
+                "what's the lowest",
+                "what was the lowest",
+                "show me the min",
+                "lowest value",
+                "minimum value",
+                "smallest price",
+                "all time low",
+                "record low"
             ],
             "responses": [
                 "The lowest stock price of this company was: ",
                 "Sure! Here is the minimum stock price: ",
-                "According to recent data, the lowest stock price for this company was: "]
-            },
-            {
+                "According to recent data, the lowest stock price for this company was: "
+            ]
+        },
+        {
             "tag": "average",
             "patterns": [
                 "average",
                 "mean",
                 "median",
-                "typical"
+                "typical",
+                "avg",
+                "average price",
+                "mean price",
+                "typical price",
+                "what's the average",
+                "show me the average",
+                "average value",
+                "mean value",
+                "normal price",
+                "usual price",
+                "standard price"
             ],
             "responses": [
                 "The average stock price of this company was: ",
                 "Sure! Here is the average stock price: ",
-                "According to recent data, the average stock price for this company was: "]
-            },
-            {
+                "According to recent data, the average stock price for this company was: "
+            ]
+        },
+        {
             "tag": "growth_query",
             "patterns": [
                 "Which stock grew the most",
@@ -101,7 +166,19 @@
                 "Best performer",
                 "Highest growth",
                 "Most profitable",
-                "Which gained the most"
+                "Which gained the most",
+                "biggest gainer",
+                "top gainer",
+                "who's up the most",
+                "best performing stock",
+                "which stock is doing best",
+                "who performed best",
+                "top performing",
+                "highest return",
+                "best returns",
+                "most growth",
+                "biggest increase",
+                "largest gain"
             ],
             "responses": [
                 "Let me analyze the growth data for you.",
@@ -114,7 +191,21 @@
                 "Trading volume",
                 "Volume data",
                 "How much was traded",
-                "Most traded stock"
+                "Most traded stock",
+                "volume",
+                "vol",
+                "trading activity",
+                "how much volume",
+                "what's the volume",
+                "show me volume",
+                "volume info",
+                "volume information",
+                "how many shares traded",
+                "trade volume",
+                "shares traded",
+                "trading numbers",
+                "transaction volume",
+                "liquidity"
             ],
             "responses": [
                 "I can show you volume information.",
@@ -127,7 +218,22 @@
                 "Compare stocks",
                 "Compare companies",
                 "Which is better",
-                "Difference between"
+                "Difference between",
+                "compare",
+                "comparison",
+                "compare all",
+                "show comparison",
+                "how do they compare",
+                "rank stocks",
+                "rank companies",
+                "who's doing better",
+                "best stock",
+                "worst stock",
+                "top performers",
+                "bottom performers",
+                "which company is winning",
+                "market leaders",
+                "market overview"
             ],
             "responses": [
                 "I can compare stocks for you. Which companies would you like to compare?",
@@ -141,14 +247,22 @@
                 "What can you do",
                 "How do you work",
                 "Commands",
-                "What are your features"
+                "What are your features",
+                "help me",
+                "what do you do",
+                "capabilities",
+                "what can I ask",
+                "how to use",
+                "instructions",
+                "guide",
+                "what questions can I ask",
+                "show me commands",
+                "available commands"
             ],
             "responses": [
                 "I can help you with: stock prices, growth analysis, volume data, and comparisons. Just ask!",
                 "Ask me about stock prices, growth rates, trading volumes, or to compare companies!"
             ]
         }
-        ]
-
-    
+    ]
 }
