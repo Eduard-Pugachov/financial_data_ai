@@ -1,6 +1,10 @@
 # Top Companies' Stock Data AI Chatbot - "Equity"
 An interactive dashboard and chatbot assistant (Equity) to analyze and predict the top ~32 company stocks.
 
+## 🎥 Demo Video
+Short video with a few of the capabilities shown:
+https://youtu.be/__HLwR6N6S0
+
 ## Overview
 
 NOTE --- PREDICTION NOT YET IMPLEMENTED
