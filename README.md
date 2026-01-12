@@ -15,7 +15,6 @@ This project combines data analysis, machine learning, and conversational AI to 
 
 - **AI Chatbot**: Natural language interface for querying stock data
 - **Interactive Dashboard**: Real-time visualizations and comparisons of company stock prices
-- **Stock Price Prediction**: Machine learning models trained on historical market data
 - **Multi-company Analysis**: Comparative analytics across major equities assets
 
 ## Tech Stack
